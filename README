@@ -1,0 +1,24 @@
+
+#) HOW TO RUN THE DOCKER IMAGE OF PLAYER MAKER
+#########################################################
+
+#) Open the terminal
+
+#) Navigate to the following path :
+C:\Dev\Java\players-analyzer\src\main\resources
+
+#) Run the following command to create docker image :
+   docker build -t   player-maker  .
+
+
+#) Run the following command to run the docker image and create the container:
+  docker run --name player-maker-container -p 8080:8080 player-maker
+
+
+#) Good Luck
+
+
+
+
+
+
