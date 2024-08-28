@@ -15,11 +15,15 @@ public class PlayerService {
                 playerCountMap.put(player, playerCountMap.getOrDefault(player, 0) + 1);
             }
         }
+        return getPlaysByPlayingDesc(playerCountMap,n);
+    }
 
+
+    private List<String> getPlaysByPlayingDesc(Map<String, Integer> playerCountMap,int limit){
         return playerCountMap.entrySet()
                 .stream()
                 .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
-                .limit(n)
+                .limit(limit)
                 .map(Map.Entry::getKey)
                 .collect(Collectors.toList());
     }
