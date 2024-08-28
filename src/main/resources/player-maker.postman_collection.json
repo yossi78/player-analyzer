@@ -1,0 +1,75 @@
+{
+	"info": {
+		"_postman_id": "da14bc97-04af-4a5e-9f4e-608a09fb029e",
+		"name": "player-maker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "513031"
+	},
+	"item": [
+		{
+			"name": "get Top players",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"requiredTopPlayers\": 3,\n  \"participatedPlayers\": [\n    [\n      \"Sharon\",\n      \"Shalom\",\n      \"Sharon\",\n      \"Ronaldo\"\n    ],\n    [\n      \"Sharon\",\n      \"Shalom\",\n      \"Myke\",\n      \"Ronaldo\"\n    ],\n    [\n      \"Yechiel\",\n      \"Sivan\",\n      \"Messi\",\n      \"Ronaldo\"\n    ],\n    [\n      \"Yechiel\",\n      \"Assaf\",\n      \"Shalom\",\n      \"Ronaldo\"\n    ]\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/players/top",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"players",
+						"top"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Top players details",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"requiredTopPlayers\": 3,\n  \"participatedPlayers\": [\n    [\n      \"Sharon\",\n      \"Shalom\",\n      \"Sharon\",\n      \"Ronaldo\"\n    ],\n    [\n      \"Sharon\",\n      \"Shalom\",\n      \"Myke\",\n      \"Ronaldo\"\n    ],\n    [\n      \"Yechiel\",\n      \"Sivan\",\n      \"Messi\",\n      \"Ronaldo\"\n    ],\n    [\n      \"Yechiel\",\n      \"Assaf\",\n      \"Shalom\",\n      \"Ronaldo\"\n    ]\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/players/top/details",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"players",
+						"top",
+						"details"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
