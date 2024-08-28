@@ -27,4 +27,25 @@ public class PlayerService {
                 .map(Map.Entry::getKey)
                 .collect(Collectors.toList());
     }
+
+
+
+    public List<Map.Entry<String, Integer>> getTopPlayersDetails(int n, List<List<String>> participatedPlayers) {
+        Map<String, Integer> playerCountMap = new HashMap<>();
+        for (List<String> game : participatedPlayers) {
+            Set<String> uniquePlayers = new HashSet<>(game);
+            for (String player : uniquePlayers) {
+                playerCountMap.put(player, playerCountMap.getOrDefault(player, 0) + 1);
+            }
+        }
+        return getPlaysDetailsByPlayingDesc(playerCountMap,n);
+    }
+    private List<Map.Entry<String, Integer>> getPlaysDetailsByPlayingDesc(Map<String, Integer> playerCountMap, int limit) {
+        return playerCountMap.entrySet()
+                .stream()
+                .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
+                .limit(limit)
+                .collect(Collectors.toList());
+    }
+
 }
