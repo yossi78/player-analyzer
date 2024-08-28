@@ -10,7 +10,7 @@ public class PlayerService {
     public List<String> getTopPlayers(int n, List<List<String>> participatedPlayers) {
         Map<String, Integer> playerCountMap = new HashMap<>();
         for (List<String> game : participatedPlayers) {
-            Set<String> uniquePlayers = new HashSet<>(game);
+            List<String> uniquePlayers = new ArrayList<>(game);
             for (String player : uniquePlayers) {
                 playerCountMap.put(player, playerCountMap.getOrDefault(player, 0) + 1);
             }
@@ -33,7 +33,7 @@ public class PlayerService {
     public List<Map.Entry<String, Integer>> getTopPlayersDetails(int n, List<List<String>> participatedPlayers) {
         Map<String, Integer> playerCountMap = new HashMap<>();
         for (List<String> game : participatedPlayers) {
-            Set<String> uniquePlayers = new HashSet<>(game);
+            List<String> uniquePlayers = new ArrayList<>(game);
             for (String player : uniquePlayers) {
                 playerCountMap.put(player, playerCountMap.getOrDefault(player, 0) + 1);
             }
